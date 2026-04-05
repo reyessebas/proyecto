@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050816" />
+    <title>Feliz cumpleaños, Juanjo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- Intro cinematográfico -->
+    <div class="intro" id="intro">
+        <div class="intro-card">
+            <div class="intro-kicker">Una sorpresa hecha con cariño</div>
+            <h1 class="intro-title" id="introTitle"></h1>
+            <p class="intro-copy">Juanjito, prepárate para entrar en un viaje hecho con todo el cariño y pequeñas cosas
+                que celebran lo increíble que eres.</p>
+            <div class="intro-actions">
+                <button class="btn" id="revealBtn">Descúbrelo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div class="app">
+        <header class="nav">
+            <div class="nav-inner">
+                <a class="brand" href="#inicio">
+                    <div class="brand-mark">✦</div>
+                    <div class="brand-text">
+                        <small>Para mi mejor amigo</small>
+                        <span>Para <span class="juanjo">Juanjo</span></span>
+                    </div>
+                </a>
+                <nav class="nav-links" aria-label="Secciones">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#historia">Nuestra historia</a>
+                    <a href="#recuerdos">Recuerdos</a>
+                    <a href="#gustos">Cosas que te gustan</a>
+                    <a href="#musica">Música</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="section hero" id="inicio">
+         
+                        <img class="hero-photo" src="img/juanjo (1).png" alt="Foto de Juanjo">
+         
+
+                </div>
+
+
+            </section>
+
+                    <div class="hero-card reveal" data-tilt>
+                    <div class="memory-orb one"></div>
+                    <div class="memory-orb two"></div>
+                    <div class="memory-orb three"></div>
+                    <div class="hero-card-content">
+                        <div class="floating-note">Tu día tiene energía de constelación ✨</div>
+                        <div></div>
+                        <div class="hero-slab">
+                            <strong>Esto no es una página. Es una escena.</strong>
+                            <p>Un espacio para recordar, sentir y sonreír. Todo lo que sigue está pensado para que al
+                                deslizar la pantalla se note que este regalo fue hecho solo para ti.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+    <section class="section" id="historia">
+        <div class="section-title reveal">
+            <small>Nuestra historia</small>
+            <h2>La amistad también merece una línea de tiempo.</h2>
+            <p>Un recorrido visual con momentos que se sienten como capítulos de una misma película: la nuestra.</p>
+        </div>
+        <div class="story-grid">
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <h3>Cómo nos conocimos</h3>
+                    <p>Todo empezó con una coincidencia que parecía pequeña, pero terminó abriendo una de esas amistades
+                        que cambian el ritmo de la vida.</p>
+                </article>
+                <article class="timeline-item reveal">
+                    <h3>Primer recuerdo importante</h3>
+                    <p>Ese momento simple en el que ya se notaba que contigo no hacía falta fingir nada. Solo estar,
+                        hablar y reírse sin mirar el reloj.</p>
+                </article>
+                <article class="timeline-item reveal">
+                    <h3>Momentos clave</h3>
+                    <p>Las conversaciones largas, las bromas internas, los planes improvisados y esa forma tuya de hacer
+                        que todo parezca más ligero.</p>
+                </article>
+                <article class="timeline-item reveal">
+                    <h3>Lo que viene</h3>
+                    <p>Porque las buenas historias no terminan aquí. Solo están esperando el siguiente recuerdo épico
+                        que crear juntos.</p>
+                </article>
+            </div>
+
+            <aside class="story-image-card reveal">
+                <div class="story-image"></div>
+                <div class="overlay">
+                    <div></div>
+                    <div class="story-badge">
+                        <strong>Un recuerdo en movimiento</strong>
+                        Cada amistad tiene un lugar al que volver. Esta tarjeta es ese portal.
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section journey">
+        <div class="section-title reveal">
+            <small>Experiencia 3D</small>
+            <h2>Un viaje entre capas, luz y memoria.</h2>
+            <p>Desliza y deja que la escena cambie de profundidad. La página responde al movimiento para crear sensación
+                de viaje e inmersión.</p>
+        </div>
+
+        <div class="journey-stage reveal" id="journeyStage">
+            <div class="stars" id="stars"></div>
+            <div class="path"></div>
+            <div class="glow-orb a"></div>
+            <div class="glow-orb b"></div>
+
+            <div class="float-card one" data-depth="0.3">
+                <h3>Entrada a otra dimensión</h3>
+                <p>La luz se abre, el fondo respira y los recuerdos empiezan a orbitar alrededor de ti.</p>
+            </div>
+            <div class="float-card two" data-depth="0.55">
+                <h3>Capas de historia</h3>
+                <p>Los elementos se desplazan a distinta velocidad para simular profundidad y darle tensión al viaje.
+                </p>
+            </div>
+            <div class="float-card three" data-depth="0.78">
+                <h3>Destino: celebrar</h3>
+                <p>Toda la navegación conduce a la misma idea: hacerte sentir especial, hoy y siempre.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="recuerdos">
+        <div class="section-title reveal">
+            <small>Recuerdos</small>
+            <h2>Momentos que se ven como escenas guardadas con cariño.</h2>
+            <p>Galería con placeholders visuales y movimiento suave al aparecer, pensada para que cada tarjeta sienta
+                como una fotografía viva.</p>
+        </div>
+
+        <div class="memory-grid">
+            <article class="memory-card card-1 reveal">
+                <div class="memory-media"
+                    style="background-image: linear-gradient(180deg, rgba(5,8,22,0.08), rgba(5,8,22,0.72)), url('img/memory-1.svg');">
+                </div>
+                <div class="memory-copy">
+                    <h3>La primera foto mental</h3>
+                    <p>Ese instante en el que ya se sabía que tu presencia iba a quedarse para siempre en la historia
+                        del grupo.</p>
+                </div>
+            </article>
+            <article class="memory-card card-2 reveal">
+                <div class="memory-media"
+                    style="background-image: linear-gradient(180deg, rgba(5,8,22,0.08), rgba(5,8,22,0.72)), url('img/memory-2.svg');">
+                </div>
+                <div class="memory-copy">
+                    <h3>La noche de las risas</h3>
+                    <p>Una de esas veces en las que el tiempo deja de importar porque todo lo que pasa alrededor es
+                        demasiado bueno.</p>
+                </div>
+            </article>
+            <article class="memory-card card-3 reveal">
+                <div class="memory-media"
+                    style="background-image: linear-gradient(180deg, rgba(5,8,22,0.08), rgba(5,8,22,0.72)), url('img/memory-3.svg');">
+                </div>
+                <div class="memory-copy">
+                    <h3>Plan improvisado</h3>
+                    <p>Lo mejor casi nunca estaba planeado. Salía de la espontaneidad, y ahí vivían los recuerdos más
+                        fuertes.</p>
+                </div>
+            </article>
+            <article class="memory-card card-4 reveal">
+                <div class="memory-media"
+                    style="background-image: linear-gradient(180deg, rgba(5,8,22,0.08), rgba(5,8,22,0.72)), url('img/memory-4.svg');">
+                </div>
+                <div class="memory-copy">
+                    <h3>Todo el universo cabe en una charla larga</h3>
+                    <p>Esos ratos donde no hacía falta llegar a ningún sitio porque la conversación ya era el destino.
+                    </p>
+                </div>
+            </article>
+            <article class="memory-card card-5 reveal">
+                <div class="memory-media"
+                    style="background-image: linear-gradient(180deg, rgba(5,8,22,0.08), rgba(5,8,22,0.72)), url('img/memory-5.svg');">
+                </div>
+                <div class="memory-copy">
+                    <h3>La sensación de hogar</h3>
+                    <p>Porque hay amistades que no solo acompañan: construyen un lugar emocional al que volver.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" id="gustos">
+        <div class="section-title reveal">
+            <small>Cosas que te gustan</small>
+            <h2>Detalles que hacen fácil reconocerte.</h2>
+            <p>Tarjetas con pequeños guiños a lo que te mueve, te entretiene y forma parte de tu personalidad.</p>
+        </div>
+
+        <div class="likes-grid">
+            <article class="like-card reveal">
+                <span>🎵</span>
+                <h3>Música favorita</h3>
+                <p>De esas canciones que te cambian el ánimo al instante y hacen que el día suene mejor.</p>
+            </article>
+            <article class="like-card reveal">
+                <span>🎮</span>
+                <h3>Videojuegos</h3>
+                <p>Momentos de reto, estrategia, risas y partidas que se recuerdan incluso después de apagar la
+                    pantalla.</p>
+            </article>
+            <article class="like-card reveal">
+                <span>🍕</span>
+                <h3>Comida</h3>
+                <p>Porque celebrar también es compartir lo que más apetece con alguien que siempre suma al plan.</p>
+            </article>
+            <article class="like-card reveal">
+                <span>🛹</span>
+                <h3>Hobbies</h3>
+                <p>Todo lo que mezcla energía, creatividad y ganas de seguir explorando cosas nuevas.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" id="musica">
+        <div class="section-title reveal">
+            <small>Música</small>
+            <h2>Dos reproductores para acompañar el viaje.</h2>
+            <p>Diseño de reproductor moderno con animación de barras, progreso y controles para crear ambiente sin
+                romper la estética.</p>
+        </div>
+
+        <div class="music-grid">
+            <article class="player reveal" data-audio-player>
+                <div class="player-inner">
+                    <div class="player-header">
+                        <div>
+                            <small>Pista 01</small>
+                            <h3>Brillo de medianoche</h3>
+                        </div>
+                        <button class="play-btn" type="button" aria-label="Reproducir pista 1">
+                            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 5h3v14H7zm7 0h3v14h-3z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="audio-note">Una atmósfera suave para abrir el recuerdo y dejar que la celebración respire.
+                    </p>
+                    <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="track-bar">
+                        <div class="progress"><span></span></div>
+                        <div class="time-row"><span class="current">0:00</span><span class="duration">0:00</span></div>
+                    </div>
+                    <audio preload="metadata"
+                        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+                </div>
+            </article>
+
+            <article class="player reveal" data-audio-player>
+                <div class="player-inner">
+                    <div class="player-header">
+                        <div>
+                            <small>Pista 02</small>
+                            <h3>Viaje entre estrellas</h3>
+                        </div>
+                        <button class="play-btn" type="button" aria-label="Reproducir pista 2">
+                            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 5h3v14H7zm7 0h3v14h-3z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="audio-note">Más energía, más profundidad y una sensación de avanzar por un universo hecho
+                        para festejar.</p>
+                    <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="track-bar">
+                        <div class="progress"><span></span></div>
+                        <div class="time-row"><span class="current">0:00</span><span class="duration">0:00</span></div>
+                    </div>
+                    <audio preload="metadata"
+                        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section cta-footer">
+        <div class="final-card reveal">
+            <h2>Que este año te regale momentos tan buenos como la amistad que das.</h2>
+            <p>Ojalá esta página se sienta como una mezcla de recuerdo, abrazo y celebración. Gracias por ser una
+                persona tan importante y por convertir lo cotidiano en algo más bonito.</p>
+            <div class="glass-line"></div>
+            <p class="footer-note">Feliz cumpleaños, Juanjo. Que lo mejor de este viaje todavía esté por venir.</p>
+        </div>
+    </section>
+    </main>
+    </div>
+</body>
+
+</html>
