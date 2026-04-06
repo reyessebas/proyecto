@@ -118,7 +118,7 @@ body.has-custom-cursor * {
     display: grid;
     place-items: center;
     z-index: 100;
-    background: radial-gradient(circle at center, rgba(13, 18, 40, 0.98), rgba(3, 4, 10, 0.995) 70%);
+    background: radial-gradient(circle at center, rgba(4, 5, 8, 0.98), rgba(3, 4, 10, 0.995) 70%);
     transition: opacity 0.9s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 1s ease;
     overflow: hidden;
 }
@@ -204,14 +204,14 @@ body.has-custom-cursor * {
     align-items: center;
     gap: 10px;
     padding: 10px 16px;
-    border-radius: 999p;
-    background: rgba(15, 11, 7, 0.872);
-    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 50px;
+    background: rgba(183, 128, 72, 0.237);
+    border: 1px solid rgba(249, 229, 204, 0.79);
     color: var(--muted);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-size: 0.72rem;
-    margin-bottom: 26px;
+    margin-bottom: 46px;
 }
 
 .intro-title {
@@ -226,8 +226,8 @@ body.has-custom-cursor * {
 }
 
 .intro-title .accent {
-    color: #b794ff;
-    text-shadow: 0 0 22px rgba(139, 92, 246, 0.7);
+    color: #eeca89;
+    text-shadow: 0 0 22px rgba(248, 236, 177, 0.438);
 }
 
 .intro-copy {
@@ -276,6 +276,23 @@ body.has-custom-cursor * {
     100% {
         transform: translate3d(var(--drift, 16px), 110vh, 0) rotate(calc(var(--rot, 0deg) + 420deg));
         opacity: 0;
+    }
+}
+
+@keyframes confettiDriftSoft {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg));
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translate3d(calc(var(--drift, 16px) * 0.3), 16vh, 0) rotate(calc(var(--rot, 0deg) + 120deg));
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: translate3d(calc(var(--drift, 16px) * 0.6), 34vh, 0) rotate(calc(var(--rot, 0deg) + 220deg));
+        opacity: 0.35;
     }
 }
 
@@ -572,8 +589,8 @@ body.is-ready .app {
     min-height: 540px;
     padding: 24px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(180deg, rgba(108, 92, 92, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(104, 16, 16, 0.12);
     overflow: hidden;
     transform-style: preserve-3d;
     perspective: 1200px;
@@ -1679,10 +1696,10 @@ body.is-ready .app {
         scroll-behavior: auto !important;
     }
 
-    /* Keep intro confetti visible on devices that reduce motion. */
+    /* Keep confetti animated but softer on devices that reduce motion. */
     .confetti-piece {
-        animation: none !important;
-        opacity: 0.85 !important;
-        transform: rotate(var(--rot, 0deg)) !important;
+        animation: confettiDriftSoft 6.5s ease-in-out infinite !important;
+        opacity: 0.9 !important;
+        will-change: transform, opacity;
     }
 }
