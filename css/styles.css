@@ -1559,17 +1559,27 @@ body.is-ready .app {
     .intro-title {
         font-size: clamp(1.6rem, 7.4vw, 2.8rem);
         line-height: 1.05;
+        color: var(--text);
+    }
+
+    .intro-title .accent {
+        color: #eeca89;
+        text-shadow: 0 0 22px rgba(248, 236, 177, 0.438);
     }
 
     .intro-kicker {
         font-size: 0.62rem;
         letter-spacing: 0.1em;
+        color: var(--muted);
+        background: rgba(183, 128, 72, 0.237);
+        border-color: rgba(249, 229, 204, 0.79);
     }
 
     .intro-copy,
     .type-line {
         font-size: 0.98rem;
         line-height: 1.65;
+        color: var(--muted);
     }
 
     .hero-actions {
@@ -1670,6 +1680,22 @@ body.is-ready .app {
 
     .intro-title {
         font-size: clamp(1.35rem, 7vw, 2.2rem);
+        color: var(--text);
+    }
+
+    .intro-title .accent {
+        color: #eeca89;
+        text-shadow: 0 0 22px rgba(248, 236, 177, 0.438);
+    }
+
+    .intro-kicker {
+        color: var(--muted);
+        background: rgba(183, 128, 72, 0.237);
+        border-color: rgba(249, 229, 204, 0.79);
+    }
+
+    .intro-copy {
+        color: var(--muted);
     }
 
     .section-title h2 {
