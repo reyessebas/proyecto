@@ -3,7 +3,7 @@ const revealBtn = document.getElementById('revealBtn');
 const intro = document.getElementById('intro');
 const cursor = document.getElementById('cursor');
 const body = document.body;
-const introText = 'Eyy tu... ¿sabes qué día es hoy?, pues si juanjito es 18 de Abril, el dia de tus cumpleaños';
+const introText = 'Eyy tu... ¿sabes qué día es hoy?, Así es, juanjito hoy es 18 de Abril, el gran día de tus Cumpleaños';
 
 function createIntroEffects() {
   const fxLayer = document.createElement('div');
@@ -35,7 +35,7 @@ function typeWriter(element, text, speed = 42) {
   element.textContent = '';
   return new Promise((resolve) => {
     const tick = () => {
-      element.innerHTML = text.slice(0, index).replace('cumpleaños', '<span class="accent">cumpleaños</span>');
+      element.innerHTML = text.slice(0, index).replace('Cumpleaños', '<span class="accent">Cumpleaños</span>');
       index += 1;
       if (index <= text.length) {
         window.setTimeout(tick, speed);
