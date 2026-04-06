@@ -279,6 +279,23 @@ body.has-custom-cursor * {
     }
 }
 
+@keyframes confettiDriftSoft {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg));
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translate3d(calc(var(--drift, 16px) * 0.3), 16vh, 0) rotate(calc(var(--rot, 0deg) + 120deg));
+        opacity: 0.95;
+    }
+
+    100% {
+        transform: translate3d(calc(var(--drift, 16px) * 0.6), 34vh, 0) rotate(calc(var(--rot, 0deg) + 220deg));
+        opacity: 0.35;
+    }
+}
+
 .btn {
     position: relative;
     border: 0;
@@ -1679,10 +1696,10 @@ body.is-ready .app {
         scroll-behavior: auto !important;
     }
 
-    /* Keep intro confetti visible on devices that reduce motion. */
+    /* Keep confetti animated but softer on devices that reduce motion. */
     .confetti-piece {
-        animation: none !important;
-        opacity: 0.85 !important;
-        transform: rotate(var(--rot, 0deg)) !important;
+        animation: confettiDriftSoft 6.5s ease-in-out infinite !important;
+        opacity: 0.9 !important;
+        will-change: transform, opacity;
     }
 }
