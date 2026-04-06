@@ -5,6 +5,31 @@ const cursor = document.getElementById('cursor');
 const body = document.body;
 const introText = 'Eyy tu... ¿sabes qué día es hoy?, pues si juanjito es 18 de Abril, el dia de tus cumpleaños';
 
+function createIntroEffects() {
+  const fxLayer = document.createElement('div');
+  fxLayer.className = 'intro-fx';
+
+  const confettiColors = ['#f4d35e', '#f9c784', '#f5e1c8', '#e7d3c3', '#d9d9d9', '#a8a8a8'];
+  for (let index = 0; index < 36; index += 1) {
+    const confetti = document.createElement('span');
+    confetti.className = 'confetti-piece';
+    confetti.style.setProperty('--x', `${Math.random() * 100}%`);
+    confetti.style.setProperty('--y', `${24 + Math.random() * 40}%`);
+    confetti.style.setProperty('--w', `${6 + Math.random() * 8}px`);
+    confetti.style.setProperty('--h', `${10 + Math.random() * 16}px`);
+    confetti.style.setProperty('--rot', `${Math.random() * 360}deg`);
+    confetti.style.setProperty('--duration', `${3.8 + Math.random() * 3.4}s`);
+    confetti.style.setProperty('--drift', `${-70 + Math.random() * 140}px`);
+    confetti.style.setProperty('--color', confettiColors[index % confettiColors.length]);
+    confetti.style.animationDelay = `${Math.random() * 4.2}s`;
+    fxLayer.appendChild(confetti);
+  }
+
+  intro.appendChild(fxLayer);
+}
+
+createIntroEffects();
+
 function typeWriter(element, text, speed = 42) {
   let index = 0;
   element.textContent = '';
@@ -32,8 +57,28 @@ async function runIntro() {
 runIntro();
 
 revealBtn.addEventListener('click', () => {
-  intro.classList.add('is-hidden');
-  body.classList.add('is-ready');
+  if (intro.classList.contains('is-launch')) {
+    return;
+  }
+
+  const fxLayer = intro.querySelector('.intro-fx');
+  if (fxLayer) {
+    fxLayer.style.animation = 'none';
+    fxLayer.offsetHeight;
+    fxLayer.style.animation = 'introTravel 0.7s ease-out forwards';
+  }
+
+  revealBtn.classList.add('is-firing');
+  intro.classList.add('is-launch');
+
+  const rect = revealBtn.getBoundingClientRect();
+  intro.style.setProperty('--fx-x', `${rect.left + rect.width / 2}px`);
+  intro.style.setProperty('--fx-y', `${rect.top + rect.height / 2}px`);
+
+  window.setTimeout(() => {
+    intro.classList.add('is-hidden');
+    body.classList.add('is-ready');
+  }, 380);
   window.setTimeout(() => {
     intro.remove();
   }, 1100);

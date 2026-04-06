@@ -120,6 +120,45 @@ body.has-custom-cursor * {
     z-index: 100;
     background: radial-gradient(circle at center, rgba(13, 18, 40, 0.98), rgba(3, 4, 10, 0.995) 70%);
     transition: opacity 0.9s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 1s ease;
+    overflow: hidden;
+}
+
+.intro-fx {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.intro-card {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 32px;
+    max-width: 100%;
+    width: min(99vw, 100%);
+    animation: introCardFloat 7s ease-in-out infinite;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: var(--w, 10px);
+    height: var(--h, 16px);
+    left: var(--x, 50%);
+    top: var(--y, 55%);
+    background: var(--color, #f59e0b);
+    border-radius: 2px;
+    transform: rotate(var(--rot, 0deg));
+    opacity: 0;
+    animation: confettiFall var(--duration, 4.8s) linear infinite;
+}
+
+.confetti-piece:nth-child(3n) {
+    border-radius: 50%;
+}
+
+.confetti-piece:nth-child(4n) {
+    width: calc(var(--w, 10px) * 1.4);
 }
 
 .intro::before {
@@ -149,18 +188,15 @@ body.has-custom-cursor * {
     animation: introFadeUp 0.45s ease forwards;
 }
 
+.intro.is-launch .intro-fx {
+    animation: introTravel 0.7s ease-out forwards;
+}
+
 .intro.is-hidden {
     opacity: 0;
     pointer-events: none;
     transform: scale(1.06);
     filter: blur(18px);
-}
-
-.intro-card {
-    text-align: center;
-    padding: 32px;
-    max-width: 100%;
-    width: min(99vw, 100%);
 }
 
 .intro-kicker {
@@ -214,6 +250,33 @@ body.has-custom-cursor * {
 .intro-actions.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@keyframes introCardFloat {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.01);
+    }
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg));
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(var(--drift, 16px), 110vh, 0) rotate(calc(var(--rot, 0deg) + 420deg));
+        opacity: 0;
+    }
 }
 
 .btn {
@@ -1366,6 +1429,18 @@ body.is-ready .app {
 
     100% {
         transform: scale(1.04);
+    }
+}
+
+@keyframes introTravel {
+    0% {
+        transform: scale(1);
+        filter: blur(0px);
+    }
+
+    100% {
+        transform: scale(1.08);
+        filter: blur(1px);
     }
 }
 
