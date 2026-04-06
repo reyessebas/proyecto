@@ -1678,4 +1678,11 @@ body.is-ready .app {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
+    /* Keep intro confetti visible on devices that reduce motion. */
+    .confetti-piece {
+        animation: none !important;
+        opacity: 0.85 !important;
+        transform: rotate(var(--rot, 0deg)) !important;
+    }
 }
