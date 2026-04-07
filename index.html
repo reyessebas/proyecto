@@ -36,14 +36,16 @@
         <header class="nav">
             <div class="nav-inner">
                 <a class="brand" href="#inicio">
-                    <div class="brand-mark">✦</div>
+                    <div class="brand-mark"> </div>
                     <div class="brand-text">
-                        <small>Para mi mejor amigo</small>
-                        <span>Para <span class="juanjo">Juanjo</span></span>
+                        <span class="juanjo">Happy <span class="juanjo"> Birthday Juanjo</span></span>
                     </div>
                 </a>
-                <nav class="nav-links" aria-label="Secciones">
-                    <a href="#inicio">Inicio</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav-links" id="navLinks" aria-label="Secciones">
+                    <a href="#inicio">Home</a>
                     <a href="#historia">Nuestra historia</a>
                     <a href="#recuerdos">Recuerdos</a>
                     <a href="#gustos">Cosas que te gustan</a>
@@ -63,6 +65,7 @@
 
             </section>
 
+            <section>
                     <div class="hero-card reveal" data-tilt>
                     <div class="memory-orb one"></div>
                     <div class="memory-orb two"></div>
