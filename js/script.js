@@ -324,3 +324,33 @@ document.querySelectorAll('[data-tilt]').forEach((card) => {
     card.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(0)';
   });
 });
+
+const navSectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const navSections = [...navSectionLinks]
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+function setActiveNavLink(id) {
+  navSectionLinks.forEach((link) => {
+    const isCurrent = link.getAttribute('href') === `#${id}`;
+    link.classList.toggle('is-current', isCurrent);
+  });
+}
+
+if (navSections.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveNavLink(entry.target.id);
+      }
+    });
+  }, {
+    rootMargin: '-35% 0px -45% 0px',
+    threshold: 0.1,
+  });
+
+  navSections.forEach((section) => sectionObserver.observe(section));
+
+  const initialId = (window.location.hash || '#inicio').replace('#', '');
+  setActiveNavLink(initialId);
+}

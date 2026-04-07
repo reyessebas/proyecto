@@ -292,11 +292,9 @@ body.has-custom-cursor * {
 .intro-kicker {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 10px 16px;
-    border-radius: 50px;
-    background: rgba(183, 128, 72, 0.237);
-    border: 1px solid rgba(249, 229, 204, 0.79);
+    border-bottom: 1px  solid rgba(249, 229, 204, 0.376);
     color: var(--muted);
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -454,7 +452,7 @@ body.has-custom-cursor * {
 
 body.is-ready .app {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
 }
 
 .nav {
@@ -463,7 +461,8 @@ body.is-ready .app {
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 10000;
+    isolation: isolate;
     padding: 18px 0;
     backdrop-filter: blur(22px);
     background: black;
@@ -491,6 +490,7 @@ body.is-ready .app {
 .brand-mark {
     width: 46px;
     height: 46px;
+    padding-right: 2px;
     display: grid;
     place-items: center;
     border-radius: 16px;
@@ -514,17 +514,17 @@ body.is-ready .app {
 .juanjo {
     position: relative;
     color: #eff4ff;
-    text-shadow: 0 0 16px rgba(139, 92, 246, 0.65), 0 0 28px rgba(34, 211, 238, 0.34);
+    text-shadow: 0 0 16px rgba(246, 228, 92, 0.65), 0 0 28px rgba(210, 164, 118, 0.34);
     animation: glowPulse 3.5s ease-in-out infinite;
 }
 
 .juanjo::after {
     content: '';
     position: absolute;
-    inset: auto 0 -4px;
+    inset: auto 0 -10px;
     height: 2px;
     border-radius: 999px;
-    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.95), rgba(139, 92, 246, 0.95), transparent);
+    background: linear-gradient(90deg, transparent, rgba(245, 223, 204, 0.95), rgba(246, 190, 92, 0.95), transparent);
     filter: blur(0.4px);
     animation: underlineMove 3s linear infinite;
 }
@@ -533,7 +533,7 @@ body.is-ready .app {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
     flex-wrap: nowrap;
     justify-content: flex-end;
     opacity: 1;
@@ -562,11 +562,20 @@ body.is-ready .app {
 }
 
 .nav-links a:hover {
-    color: white;
+    color: #f6be5c;
 }
 
 .nav-links a:hover::after {
     transform: scaleX(1);
+}
+
+.nav-links a.is-current {
+    color: #f6be5c;
+}
+
+.nav-links a.is-current::after {
+    transform: scaleX(1);
+    background: linear-gradient(90deg, transparent, rgba(246, 190, 92, 0.95), transparent);
 }
 
 /* Menú hamburguesa */
@@ -628,12 +637,22 @@ body.is-ready .app {
     z-index: 2;
 }
 
+.sectionn {
+    position: relative;
+    width: min(calc(95% - 32px));
+    margin: 0 auto;
+    padding: 20px 0;
+    z-index: 1;
+    
+}
+
 .hero {
     min-height: 100vh;
     display: grid;
     align-items: center;
-    padding-top: 110px;
+    padding-top: 140px;
     padding-bottom: 70px;
+    
 }
 
 .hero-grid {
@@ -755,8 +774,8 @@ body.is-ready .app {
     min-height: 540px;
     padding: 24px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(180deg, rgba(108, 92, 92, 0.08), rgba(255, 255, 255, 0.03));
-    border: 1px solid rgba(104, 16, 16, 0.12);
+    background: linear-gradient(180deg, rgb(251, 251, 251), rgb(255, 255, 255));
+    border: 1px solid rgba(72, 104, 16, 0.12);
     overflow: hidden;
     transform-style: preserve-3d;
     perspective: 1200px;
@@ -766,7 +785,7 @@ body.is-ready .app {
     content: '';
     position: absolute;
     inset: -40%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 38%), radial-gradient(circle at 70% 30%, rgba(34, 211, 238, 0.24), transparent 32%);
+    background: radial-gradient(circle, rgb(255, 255, 255), transparent 38%), radial-gradient(circle at 70% 30%, rgb(254, 255, 255), transparent 32%);
     animation: orbFloat 14s ease-in-out infinite alternate;
 }
 
@@ -842,7 +861,7 @@ body.is-ready .app {
     margin-top: auto;
     padding: 18px;
     border-radius: 22px;
-    background: rgba(7, 11, 24, 0.55);
+    background: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(18px);
     display: grid;
@@ -856,8 +875,13 @@ body.is-ready .app {
 
 .hero-slab p {
     margin: 0;
-    color: var(--muted);
+    color: #6c757d;
     line-height: 1.6;
+}
+
+.sectionn .hero-slab p {
+    font-size: 1.08rem;
+    line-height: 1.85;
 }
 
 .section-title {
@@ -1789,6 +1813,12 @@ body.is-ready .app {
         color: var(--muted);
     }
 
+    .sectionn .hero-slab p {
+        font-size: 1rem;
+        line-height: 1.78;
+        color: #6c757d;
+    }
+
     .hero-actions {
         width: 100%;
     }
@@ -1944,6 +1974,12 @@ body.is-ready .app {
 
     .intro-copy {
         color: var(--muted);
+    }
+
+    .sectionn .hero-slab p {
+        font-size: 0.98rem;
+        line-height: 1.74;
+        color: #6c757d;
     }
 
     .intro-spiral-bg {
