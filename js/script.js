@@ -118,6 +118,31 @@ async function runIntro() {
 
 runIntro();
 
+const featureVideo = document.querySelector('.sectionn-video video');
+if (featureVideo) {
+  let playCount = 0;
+  const maxPlays = 3;
+
+  featureVideo.addEventListener('ended', () => {
+    playCount += 1;
+
+    if (playCount < maxPlays) {
+      featureVideo.currentTime = 0;
+      featureVideo.play().catch(() => {});
+      return;
+    }
+
+    featureVideo.pause();
+    featureVideo.currentTime = 0;
+  });
+
+  featureVideo.addEventListener('play', () => {
+    if (playCount >= maxPlays) {
+      playCount = 0;
+    }
+  });
+}
+
 // Crear destellos cuando el mouse se mueve en la intro
 let sparkleTimeout;
 function createSparkle(x, y) {

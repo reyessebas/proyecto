@@ -824,7 +824,7 @@ background-color: black;
     content: '';
     position: absolute;
     inset: -40%;
-    background:rgba(173, 172, 172, 0.22);
+    background:rgba(173, 172, 172, 0.117);
     animation: orbFloat 14s ease-in-out infinite alternate;
 }
 
@@ -853,9 +853,9 @@ background-color: black;
     width: fit-content;
     padding: 12px 16px;
     border-radius: 18px;
-    background: rgba(248, 204, 109, 0);
-    border: 1px solid rgba(202, 125, 30, 0.572);
-    color: rgba(142, 51, 51, 0.84);
+    background: rgba(255, 236, 194, 0.174);
+    border: 1px solid rgba(202, 125, 30, 0.377);
+    color: rgba(104, 71, 18, 0.84);
     backdrop-filter: blur(18px);
     transform: translateZ(40px);
     animation: noteFloat 5s ease-in-out infinite;
@@ -909,9 +909,10 @@ background-color: black;
 }
 
 .hero-slab strong {
-    font-size: 1.02rem;
+    font-size: 1.52rem;
     color: #050816;
     text-transform: uppercase;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .hero-slab p {
@@ -935,7 +936,7 @@ background-color: black;
 .sectionn .hero-slab strong,
 .sectionn .floating-note,
 .sectionn .hero-slab p {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .section-title {
@@ -949,9 +950,9 @@ background-color: black;
     width: fit-content;
     padding: 9px 12px;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.06);
-    border: 1px solid rgba(15, 23, 42, 0.14);
-    color: rgba(15, 23, 42, 0.78);
+    background: rgba(255, 255, 255, 0.317);
+    border: 1px solid rgba(253, 253, 253, 0.14);
+    color: rgba(255, 255, 255, 0.658);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-size: 0.72rem;
@@ -963,14 +964,14 @@ background-color: black;
     font-size: clamp(2rem, 4vw, 3.8rem);
     letter-spacing: -0.04em;
     line-height: 1;
-    color: #0f172a;
+    color: #e9eaed;
 }
 
 .section-title p {
     margin: 0;
-    color: rgba(15, 23, 42, 0.72);
+    color: rgba(244, 244, 244, 0.72);
     line-height: 1.75;
-    max-width: 68ch;
+    max-width: 88ch;
 }
 
 .story-grid {
@@ -994,7 +995,7 @@ background-color: black;
     top: 4px;
     bottom: 4px;
     width: 2px;
-    background: linear-gradient(180deg, rgba(34, 211, 238, 0.1), rgba(139, 92, 246, 0.9), rgba(249, 115, 22, 0.15));
+
 }
 
 .timeline-item {
@@ -1026,8 +1027,8 @@ background-color: black;
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #6ee7ff, #8b5cf6);
-    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.12), 0 0 20px rgba(110, 231, 255, 0.35);
+    
+  
 }
 
 .timeline-item h3 {
