@@ -641,12 +641,26 @@ body.is-ready .app {
     position: relative;
     width: min(calc(95% - 32px));
     margin: 0 auto;
-    padding: 20px 0;
+    margin-bottom: 4%;
+    padding: 20px 0px;
     z-index: 1;
     font-family: 'Roboto Slab', serif;
     
 }
 
+.sectioon {
+    position: relative;
+     width: min(calc(95% - 32px));
+    margin: 0 auto;
+    padding: 108px 0;
+    z-index: 2;
+    background-color: black;
+
+}
+.sec{
+width: 100%;
+background-color: black;
+}
 .hero {
     min-height: 100vh;
     display: grid;
@@ -872,6 +886,8 @@ body.is-ready .app {
 
 .hero-slab strong {
     font-size: 1.02rem;
+    color: #050816;
+    text-transform: uppercase;
 }
 
 .hero-slab p {
