@@ -643,6 +643,7 @@ body.is-ready .app {
     margin: 0 auto;
     padding: 20px 0;
     z-index: 1;
+    font-family: 'Roboto Slab', serif;
     
 }
 
@@ -766,14 +767,14 @@ body.is-ready .app {
 .player,
 .final-card,
 .journey-stage {
-    box-shadow: var(--shadow);
+    box-shadow: none;
 }
 
 .hero-card {
     position: relative;
     min-height: 540px;
     padding: 24px;
-    border-radius: var(--radius-lg);
+    border-radius: calc(var(--radius-lg) - 24px);
     background: linear-gradient(180deg, rgb(251, 251, 251), rgb(255, 255, 255));
     border: 1px solid rgba(72, 104, 16, 0.12);
     overflow: hidden;
@@ -785,7 +786,7 @@ body.is-ready .app {
     content: '';
     position: absolute;
     inset: -40%;
-    background: radial-gradient(circle, rgb(255, 255, 255), transparent 38%), radial-gradient(circle at 70% 30%, rgb(254, 255, 255), transparent 32%);
+    background:rgba(173, 172, 172, 0.22);
     animation: orbFloat 14s ease-in-out infinite alternate;
 }
 
@@ -793,9 +794,9 @@ body.is-ready .app {
     content: '';
     position: absolute;
     inset: 14px;
-    border-radius: calc(var(--radius-lg) - 14px);
+    border-radius: calc(var(--radius-lg) - 24px);
     border: 1px solid rgba(255, 255, 255, 0.09);
-    background: linear-gradient(135deg, rgba(4, 6, 16, 0.26), rgba(10, 16, 40, 0.1));
+    background: linear-gradient(135deg, rgb(255, 255, 255), rgb(255, 255, 255));
     backdrop-filter: blur(12px);
     pointer-events: none;
 }
@@ -814,9 +815,9 @@ body.is-ready .app {
     width: fit-content;
     padding: 12px 16px;
     border-radius: 18px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.84);
+    background: rgba(248, 204, 109, 0);
+    border: 1px solid rgba(202, 125, 30, 0.572);
+    color: rgba(142, 51, 51, 0.84);
     backdrop-filter: blur(18px);
     transform: translateZ(40px);
     animation: noteFloat 5s ease-in-out infinite;
@@ -862,7 +863,7 @@ body.is-ready .app {
     padding: 18px;
     border-radius: 22px;
     background: rgba(255, 255, 255, 0);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0);
     backdrop-filter: blur(18px);
     display: grid;
     gap: 10px;
@@ -877,11 +878,24 @@ body.is-ready .app {
     margin: 0;
     color: #6c757d;
     line-height: 1.6;
+
 }
 
 .sectionn .hero-slab p {
-    font-size: 1.08rem;
-    line-height: 1.85;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #6c757dcf;
+}
+
+.sectionn .hero-slab {
+    background: #ffffff00;
+    
+}
+
+.sectionn .hero-slab strong,
+.sectionn .floating-note,
+.sectionn .hero-slab p {
+    font-family: 'Roboto Slab', serif;
 }
 
 .section-title {
@@ -1074,7 +1088,7 @@ body.is-ready .app {
     background: rgba(7, 11, 24, 0.68);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
-    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+    box-shadow: none;
     transform-style: preserve-3d;
 }
 
