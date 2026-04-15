@@ -1994,14 +1994,20 @@ background-color: black;
     }
 
     .section {
-        width: min(calc(100% - 22px), var(--max));
-        padding: 78px 0;
+        width: min(calc(100% - 16px), var(--max));
+        padding: 60px 0;
+    }
+
+    .sectionn,
+    .sectioon {
+        width: min(calc(100% - 16px), var(--max));
+        padding: 60px 0;
     }
 
     .hero {
         min-height: auto;
-        padding-top: 122px;
-        padding-bottom: 36px;
+        padding-top: 92px;
+        padding-bottom: 28px;
     }
 
     .hero-photo {
@@ -2067,6 +2073,11 @@ background-color: black;
     .hero-actions .btn-secondary {
         width: 100%;
         text-align: center;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .story-image-card {
@@ -2202,7 +2213,8 @@ background-color: black;
     }
 
     .hero {
-        padding-top: 112px;
+        padding-top: 84px;
+        padding-bottom: 24px;
     }
 
     .hero-photo {
@@ -2244,8 +2256,35 @@ background-color: black;
         height: 140vmax;
     }
 
+    .section,
+    .sectionn,
+    .sectioon {
+        width: min(calc(100% - 12px), var(--max));
+        padding: 52px 0;
+    }
+
+    .story-grid {
+        gap: 12px;
+    }
+
+    .story-image-card {
+        padding: 12px;
+    }
+
+    .story-image-card video {
+        aspect-ratio: 16 / 9;
+        border-radius: 14px;
+    }
+
+    .player,
+    .music-note,
+    .parabatai-card,
+    .like-card {
+        padding: 16px;
+    }
+
     .section-title h2 {
-        font-size: clamp(1.7rem, 8.2vw, 2.3rem);
+        font-size: clamp(1.55rem, 8.4vw, 2.05rem);
     }
 
     .section-title p {
