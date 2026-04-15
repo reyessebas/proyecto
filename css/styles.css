@@ -30,6 +30,12 @@ body {
     overflow-x: hidden;
 }
 
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
 body::before {
     content: none;
     position: fixed;
@@ -631,7 +637,7 @@ body.has-custom-cursor * {
 
 .sectionn {
     position: relative;
-    width: min(calc(95% - 32px));
+    width: min(calc(100% - 32px), var(--max));
     margin: 0 auto;
     margin-bottom: 4%;
     padding: 20px 0px;
@@ -666,7 +672,7 @@ body.has-custom-cursor * {
 
 .sectioon {
     position: relative;
-     width: min(calc(95% - 32px));
+    width: min(calc(100% - 32px), var(--max));
     margin: 0 auto;
     padding: 108px 0;
     z-index: 2;
@@ -918,6 +924,7 @@ background-color: black;
     font-size: 1.2rem;
     line-height: 1.7;
     color: #6c757dcf;
+    overflow-wrap: anywhere;
 }
 
 .sectionn .hero-slab {
@@ -1054,6 +1061,7 @@ background-color: black;
     margin: 0;
     color: var(--muted);
     line-height: 1.79;
+    overflow-wrap: anywhere;
 }
 
 .story-image-card {
@@ -1434,7 +1442,7 @@ background-color: black;
     margin: 0 0 12px;
     color: var(--muted);
     line-height: 1.6;
-    
+    overflow-wrap: anywhere;
 }
 
 #musica .music-note p {
@@ -1895,22 +1903,37 @@ background-color: black;
 
     .sectionn-layout {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .sectionn-video {
         position: relative;
         top: 0;
         height: auto;
+        min-height: 0;
     }
 
     .sectionn-video video {
         height: auto;
+        width: 100%;
         min-height: 0;
         max-height: 70vh;
+        object-fit: contain;
+        aspect-ratio: 9 / 16;
+    }
+
+    .hero-card {
+        min-height: auto;
+    }
+
+    .floating-note {
+        justify-self: start;
+        max-width: 100%;
     }
 
     .hero {
-        padding-top: 84px;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
 
     .story-grid {
@@ -1937,10 +1960,13 @@ background-color: black;
 
     .nav {
         padding: 12px 0;
+        position: sticky;
+        top: 0;
     }
 
     .hero {
-        padding-top: 78px;
+        padding-top: 16px;
+        padding-bottom: 12px;
     }
 
     .nav-inner {
@@ -1995,7 +2021,7 @@ background-color: black;
 
     .section {
         width: min(calc(100% - 16px), var(--max));
-        padding: 60px 0;
+        padding: 52px 0;
     }
 
     .sectionn,
@@ -2006,8 +2032,14 @@ background-color: black;
 
     .hero {
         min-height: auto;
-        padding-top: 92px;
-        padding-bottom: 28px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .section.hero {
+        width: min(calc(100% - 8px), var(--max));
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
     .hero-photo {
@@ -2024,8 +2056,18 @@ background-color: black;
     }
 
     .hero-card {
-        min-height: 360px;
+        min-height: auto;
         padding: 18px;
+    }
+
+    .hero-slab {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .hero-slab strong {
+        font-size: clamp(1rem, 5.4vw, 1.2rem);
+        line-height: 1.35;
     }
 
     .hero h1 {
@@ -2039,17 +2081,9 @@ background-color: black;
         color: var(--text);
     }
 
-    .intro-title .accent {
-        color: #eeca89;
-        text-shadow: 0 0 22px rgba(248, 236, 177, 0.438);
-    }
-
     .intro-kicker {
         font-size: 0.62rem;
         letter-spacing: 0.1em;
-        color: var(--muted);
-        background: rgba(183, 128, 72, 0.237);
-        border-color: rgba(249, 229, 204, 0.79);
     }
 
     .intro-copy,
@@ -2063,6 +2097,19 @@ background-color: black;
         font-size: 1rem;
         line-height: 1.78;
         color: #6c757d;
+    }
+
+    .timeline-item p {
+        font-size: 1rem;
+        line-height: 1.68;
+    }
+
+    .like-card p,
+    .music-note p,
+    .memory-copy p,
+    .section-title p {
+        font-size: 0.98rem;
+        line-height: 1.62;
     }
 
     .hero-actions {
@@ -2122,12 +2169,24 @@ background-color: black;
         min-height: 220px;
     }
 
+    .memory-copy {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+    }
+
     .player-header {
         align-items: flex-start;
     }
 
     .player {
         padding: 18px;
+    }
+
+    .spotify-embed {
+        min-height: 232px;
+        height: 60vw;
+        max-height: 352px;
     }
 
     .music-note {
@@ -2213,8 +2272,23 @@ background-color: black;
     }
 
     .hero {
-        padding-top: 84px;
-        padding-bottom: 24px;
+        padding-top: 6px;
+        padding-bottom: 4px;
+    }
+
+    .section.hero {
+        width: min(calc(100% - 4px), var(--max));
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .brand {
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .juanjo {
+        font-size: 0.84rem;
     }
 
     .hero-photo {
@@ -2228,21 +2302,6 @@ background-color: black;
     .intro-title {
         font-size: clamp(1.35rem, 7vw, 2.2rem);
         color: var(--text);
-    }
-
-    .intro-title .accent {
-        color: #eeca89;
-        text-shadow: 0 0 22px rgba(248, 236, 177, 0.438);
-    }
-
-    .intro-kicker {
-        color: var(--muted);
-        background: rgba(183, 128, 72, 0.237);
-        border-color: rgba(249, 229, 204, 0.79);
-    }
-
-    .intro-copy {
-        color: var(--muted);
     }
 
     .sectionn .hero-slab p {
@@ -2261,6 +2320,11 @@ background-color: black;
     .sectioon {
         width: min(calc(100% - 12px), var(--max));
         padding: 52px 0;
+    }
+
+    .section-title {
+        gap: 10px;
+        margin-bottom: 20px;
     }
 
     .story-grid {
@@ -2290,6 +2354,33 @@ background-color: black;
     .section-title p {
         font-size: 0.95rem;
         line-height: 1.6;
+    }
+
+    .timeline-item {
+        padding: 14px 12px 14px 14px;
+        border-radius: 16px;
+    }
+
+    .timeline-item p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .sectionn .hero-slab p,
+    .memory-copy p,
+    .like-card p,
+    .music-note p {
+        font-size: 0.92rem;
+        line-height: 1.58;
+    }
+
+    .music-grid {
+        gap: 12px;
+    }
+
+    .spotify-embed {
+        height: 72vw;
+        min-height: 220px;
     }
 }
 
